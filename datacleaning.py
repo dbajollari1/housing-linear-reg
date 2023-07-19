@@ -32,12 +32,14 @@ def init_data(filePath):
                 row[12] = vals[0]
                 row.append(vals[1])
                 row.append(vals[2])
+
                 row[5] = convertStringtoInt(row[5])
                 row[6] = convertStringtoInt(row[6])
                 row[7] = convertStringtoInt(row[7])
                 row[8] = convertStringtoInt(row[8])
                 row[9] = convertStringtoInt(row[9])
                 row[11] = convertStringtoInt(row[11])
+                
                 returnArr.append(row)
                 i += 1 
     return returnArr
