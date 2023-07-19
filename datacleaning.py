@@ -1,5 +1,5 @@
 import csv
-
+import numpy as np
 
 def convertStringtoInt(str): 
     if str == "yes": 
@@ -41,4 +41,9 @@ def init_data(filePath):
                 returnArr.append(row)
                 i += 1 
     return returnArr
+
+def normalize(data): 
+    for i in range(0,data.shape[1]-1): #loop through the columns
+	    data[:,i] = ((data[:,i] - np.mean(data[:,i]))/np.std(data[:, i])) #calculate norm for entire column
+
             

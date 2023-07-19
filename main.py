@@ -7,14 +7,16 @@ import matplotlib.pyplot as plt
 
 def main():
     dataArr = datacleaning.init_data("data/housing.csv")
-    arr = np.array(dataArr[1:], dtype='float32')
-    print(np.flip(arr.T[0]))
-    x = []
-    for i in range(545): 
-        x.append(i+1)
-    plt.scatter(x, np.flip(arr.T[0]))
-    plt.ylabel('House Prices') 
-    plt.show()
+    data = np.array(dataArr[1:], dtype='float32')
+
+    #plot house price to area
+    # plt.scatter(np.flip(data.T[1]), np.flip(data.T[0]))
+    # plt.xlabel('Area')
+    # plt.ylabel('House Prices') 
+    # plt.show()
+
+    datacleaning.normalize(data)
+    print(data)
 
 if __name__=="__main__":
     main()
